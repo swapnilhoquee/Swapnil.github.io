@@ -1,0 +1,16 @@
+backend: name: git-gateway branch: main # change to master if your repo uses master
+
+media_folder: "assets/images/gallery" public_folder: "/assets/images/gallery"
+
+site_url: "https://agent-6907f07526707--coruscating-smakager-6bef69.netlify.app"
+
+publish_mode: simple
+
+collections:
+
+name: "gallery" label: "Gallery" folder: "content/gallery" create: true slug: "{{slug}}" format: "frontmatter" fields:
+{ label: "Title", name: "title", widget: "string" }
+{ label: "Image", name: "image", widget: "image" }
+{ label: "Caption", name: "caption", widget: "text", required: false }
+{ label: "Date", name: "date", widget: "datetime", required: false }
+{ label: "Tags", name: "tags", widget: "list", required: false }
